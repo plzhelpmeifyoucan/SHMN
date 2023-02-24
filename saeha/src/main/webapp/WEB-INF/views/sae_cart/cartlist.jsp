@@ -207,7 +207,7 @@ var form;
 							<%
 								for(int i = 0; i < cartlist.size(); i++){
 									CartVO ct = (CartVO) cartlist.get(i);
-									if(ct.getCt_stock() == 0){
+									if(ct.getCt_stock() <= 0){
 							%>
 							<meta http-equiv="refresh" content="0; URL='/sae_cart/cartdelete?ct_pno=<%=ct.getCt_pno()%>'">
 							<%

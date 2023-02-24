@@ -179,7 +179,7 @@ input{border: none;}
     <td style="padding:10px 0;">1</td>
     <td style="padding:10px 0;width:80px;height: 100px;background-color: orange;"><img src="/resources/productimg/${img}"/></td>
      <td style="padding:10px 0;"><input
-				type="text" id="pd_name" name="go_name" 
+				type="text" id="pd_name" name="by_name" 
 				value="${buylist.pd_name }" readonly="readonly" /></td>
      <td style="padding:10px 0;">
      <input	type="number" id="pd_number" name="by_count"value="${number }" />/
@@ -216,16 +216,16 @@ input{border: none;}
 </div>
 
 </div>
+
+	</div>	
+
+	</form>
 <br>
 <div style="text-align: center;">
 	<button onclick="history.go(-1)" style="background-color: #333;font-size:17px; height:45px;border-radius:10px; color: white;padding:0 10px;">뒤로</button>
 	&nbsp;
 	<button class="buybtn" style="background-color: white;font-size:17px; height:45px;border-radius:10px; color: black;">카카오페이로 결제하기</button>
 </div>	
-	</div>	
-
-	</form>
-
 	</div>
 	</div>
 	<footer class="footer">

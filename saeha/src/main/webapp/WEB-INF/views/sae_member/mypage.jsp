@@ -23,7 +23,7 @@
 			});
 
 			$("#memberBuyBtn").on("click", function() {
-				location.href = "/sae_member/mypageBuy";
+				location.href = "/sae_buy/buylist";
 			});
 			
 			$("#memberLikeBtn").on("click", function() {
