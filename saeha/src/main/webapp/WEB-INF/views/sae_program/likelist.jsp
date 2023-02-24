@@ -25,7 +25,7 @@
 <%@include file="nav.jsp" %>
 </div> --%>
 <section id="container">
-<form role="form" method="get">
+<form role="form" method="post">
 <table class="table table-hover">
 <thead>
 <tr><th>번호</th><th>제목</th><th>이미지</th><th>수용인원</th><th>프로그램기간</th><th>예약기간</th><th>분류</th><th>예약</th></tr>

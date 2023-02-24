@@ -79,12 +79,13 @@ $(document).ready(function(){
 <input type="hidden" id="bk_bno" name="bk_bno" value="${bookread.bk_bno}" />
 <input type="hidden" id="bk_pno" name="bk_pno" value="${bookread.bk_pno}" />
 <input type="hidden" id="bk_type" name="bk_type" value="${bookread.bk_type}" />
-<input type="hidden" id="pg_name" name="pg_name" value="${bookinfo.pg_name}" />
-<input type="hidden" id="pg_content" name="pg_content" value="${bookinfo.pg_content}" />
-<input type="hidden" id="bk_name" name="bk_name" value="${bookUpdate.bk_name}" />
-<input type="hidden" id="bk_tel" name="bk_tel" value="${bookUpdate.bk_tel}" />
-<input type="hidden" id="bk_inwon" name="bk_name" value="${bookUpdate.bk_inwon}" />
-<input type="hidden" id="bk_pdate" name="bk_pdate" value="${bookUpdate.bk_pdate}" />
+<input type="hidden" id="pg_name" name="pg_name" value="${programread.pg_name}" />
+<input type="hidden" id="pg_content" name="pg_content" value="${programread.pg_content}" />
+<input type="hidden" id="bk_name" name="bk_name" value="${bookread.bk_name}" />
+<input type="hidden" id="bk_tel" name="bk_tel" value="${bookread.bk_tel}" />
+<input type="hidden" id="bk_inwon" name="bk_name" value="${bookread.bk_inwon}" />
+<input type="hidden" id="bk_pdate" name="bk_pdate" value="${bookread.bk_pdate}" />
+<input type="hidden" id="bk_time" name="bk_time" value="${bookread.bk_time}" />
 </form>
 <div class="form-group">
  <label for="bk_type" class="col-sm-2 control-laber"></label>
@@ -92,11 +93,11 @@ $(document).ready(function(){
  </div>
 <div class="form-group">
 <label for="pg_name" class="col-sm-2 control-laber">관람 이름</label>
-<input type="text" id="pg_name" name="pg_name" class="form-control" value="${bookinfo.pg_name}" readonly="readonly" />
+<input type="text" id="pg_name" name="pg_name" class="form-control" value="${programread.pg_name}" readonly="readonly" />
 </div>
 <div class="form-group">
 <label for="pg_content" class="col-sm-2 control-label">관람 내용</label>
-<textarea id="pg_content" name="pg_content" class="form-control" readonly="readonly"><c:out value="${bookinfo.pg_content}"/></textarea>
+<textarea id="pg_content" name="pg_content" class="form-control" readonly="readonly"><c:out value="${programread.pg_content}"/></textarea>
 </div>
 <div class="form-group">
 <label for="bk_bno" class="col-sm-2 control-laber">예약 번호</label>
@@ -104,22 +105,35 @@ $(document).ready(function(){
 </div>
 <div class="form-group">
 <label for="bk_name" class="col-sm-2 control-laber">예약자 성명</label>
-<input type="text" id="bk_name" name="bk_name" class="form-control" value="${bookUpdate.bk_name}" readonly="readonly" />
+<input type="text" id="bk_name" name="bk_name" class="form-control" value="${bookUpdate.bk_name}"/>
 </div>
 <div class="form-group">
 <label for="bk_tel" class="col-sm-2 control-laber">예약자 번호</label>
-<input type="text" id="bk_tel" name="bk_tel" class="form-control" value="${bookUpdate.bk_tel}" readonly="readonly" />
+<input type="text" id="bk_tel" name="bk_tel" class="form-control" value="${bookUpdate.bk_tel}"/>
 </div>
 <div class="form-group">
 <label for="bk_inwon" class="col-sm-2 control-laber">예약 인원</label>
-<input type="text" id="bk_inwon" name="bk_inwon" class="form-control" value="${bookUpdate.bk_inwon}" readonly="readonly" />
+<%-- <input type="text" id="bk_inwon" name="bk_inwon" class="form-control" value="${bookUpdate.bk_inwon}"/> --%>
+<select id="bk_inwon" name="bk_inwon" class="form-control">
+  <option value="1">1명</option>
+  <option value="2">2명</option>
+  <option value="3">3명</option>
+  <option value="4">4명</option>
+</select>
 </div>
  <div class="form-group">
 <label for="bk_pdate" class="col-sm-2 control-laber">관람 날짜</label>
-<input type="text" id="bk_pdate" name="bk_pdate" class="form-control" value="${bookUpdate.bk_pdate}" readonly="readonly" />
+<input type="text" id="bk_pdate" name="bk_pdate" class="form-control" value="${bookUpdate.bk_pdate}" />
+</div>
+ <div class="form-group">
+<label for="bk_time" class="col-sm-2 control-laber">관람 시간</label>
+<input type="radio" id="bk_time" name="bk_time" class="form-control" value="9:00">9:00
+<input type="radio" id="bk_time" name="bk_time" class="form-control" value="11:00">11:00
+<input type="radio" id="bk_time" name="bk_time" class="form-control" value="14:00">14:00
+<input type="radio" id="bk_time" name="bk_time" class="form-control" value="16:00">16:00
 </div>
 
-<button class="write_btn" type="submit">수정</button>
+<button class="update_btn" type="submit">수정</button>
 <%-- <c:if test = "${member.userId == 'admin1' }">
 <button type="button" class="update_btn btn btn-warning">예매변경</button>
 <button type="button" class="delete_btn btn btn-danger">예매취소</button>

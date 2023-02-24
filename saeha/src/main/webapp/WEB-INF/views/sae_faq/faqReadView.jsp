@@ -49,7 +49,7 @@
    </header>
    <hr />
     
-    <form name="readForm" method="post">
+    <form method="post">
     <table>
     	<tr>
     		<td><label for = "faq_title">제목</label>
@@ -69,18 +69,13 @@
    
    <!-- 관리자용 버튼 -->
       <c:if test = "${member.userId == 'admin' }">
-      	<button type="submit" class="update_btn">(관리자)수정</button>
-      	<button type="submit" class="delete_btn">(관리자)삭제</button>
-   		<button type="button" class="list_btn">(관리자)목록</button>
+      	<button type="submit" class="update_btn">수정</button>
+      	<button type="submit" class="delete_btn">삭제</button>
+   		<button type="button" class="list_btn">목록</button>
       </c:if>
       
      
-   <div><!-- 나중에 삭제!!!!!!! --> 
-   <br><br>
-   <button type="submit" class="update_btn">수정</button>
-   <button type="submit" class="delete_btn">삭제</button>
-   <button type="button" class="list_btn">목록</button>
-   </div>
+  
     </form>
    <br>
    <hr />

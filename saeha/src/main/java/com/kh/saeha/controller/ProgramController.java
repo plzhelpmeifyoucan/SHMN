@@ -1,20 +1,28 @@
 package com.kh.saeha.controller;
 
-import java.util.LinkedList;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kh.saeha.service.LikeService;
@@ -22,6 +30,7 @@ import com.kh.saeha.service.ProgramService;
 import com.kh.saeha.vo.LikeVO;
 import com.kh.saeha.vo.MemberVO;
 import com.kh.saeha.vo.PageMaker;
+import com.kh.saeha.vo.ProductVO;
 import com.kh.saeha.vo.ProgramVO;
 import com.kh.saeha.vo.SearchCriteria;
 
@@ -30,6 +39,8 @@ import com.kh.saeha.vo.SearchCriteria;
 public class ProgramController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ProgramController.class);
+	
+	private static final String CURR_IMAGE_REPO_PATH = "C:\\Spring_1123\\spring_git\\SHMN\\saeha\\src\\main\\webapp\\resources\\programimg\\";
 	
 	@Inject
 	ProgramService service;
@@ -44,21 +55,55 @@ public class ProgramController {
 	
 
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
-	public String postUpload(ProgramVO vo) throws Exception{
+	public String postUpload(ProgramVO vo,MultipartHttpServletRequest multipartRequest,HttpServletResponse response) throws Exception{
 		logger.info("post upload~~~~");
 		System.out.println("update");
 		System.out.println(vo);
-		service.upload(vo);
 		
+		multipartRequest.setCharacterEncoding("utf-8");
+
+		List<String> fileList = fileProcess(multipartRequest);
+
+		vo.setPg_file(fileList.size());
+
+		service.upload(vo);
+
+		int bno = service.programbno(vo);
+
+		if (fileList != null) {
+			for (int i = 0; i < fileList.size(); i++) {
+				int ftotal = i + 1;
+				Map<String, String> fileMap = new HashMap<>();
+				fileMap.put("ino", String.valueOf(ftotal)); // 게시글 내부에서 파일의 넘버 전달
+				fileMap.put("ipath", (String) fileList.get(i)); // 파일의 경로 저장
+				fileMap.put("bno", String.valueOf(bno)); // 게시글 넘버 저장
+				service.pfileSave(fileMap); // 파일 저장
+			}
+		}
 		return "redirect:/sae_program/programlist?pg_type="+vo.getPg_type(); //리스트로 들어가
+	
 	}
 	
-	//	게시판 목록 조회
+	//	관람 목록 조회
 	@RequestMapping(value = "/programlist", method = RequestMethod.GET)
 	public String list(String pg_type, Model model, @ModelAttribute("scri") SearchCriteria scri) throws Exception{
 		logger.info("programlist");
 		
-		model.addAttribute("programlist", service.programlist(pg_type));
+		List<ProgramVO> list = service.programlist(pg_type);
+
+		for (int i = 0; i < list.size(); i++) {
+			ProgramVO vo = list.get(i);
+			String path = service.pgetImg(vo.getPg_bno()); 
+			if (path == null) {
+				vo.setPg_filepath("/programimg/img.png");
+
+			} else {
+				vo.setPg_filepath(path);
+			}
+
+		}
+		
+		model.addAttribute("programlist", list);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(scri);
@@ -78,6 +123,10 @@ public class ProgramController {
 		logger.info("read");
 		HttpSession session = req.getSession();
 	    MemberVO id = (MemberVO)session.getAttribute("member");
+	    
+	    if(id == null) {
+			return "sae_member/login";
+		}
 
 		LikeVO likevo = new LikeVO();
 		likevo.setLk_pno(vo.getPg_bno());
@@ -95,7 +144,7 @@ public class ProgramController {
 		}
 
 		model.addAttribute("lk_bno",lk_bno);
-		
+		model.addAttribute("pimglist", service.pimglist(vo.getPg_bno()));
 		model.addAttribute("programread", service.programread(vo.getPg_bno()));
 		model.addAttribute("scri",scri);
 		
@@ -107,11 +156,11 @@ public class ProgramController {
 	
 	//게시글 삭제
 	@RequestMapping(value="/programDelete", method = RequestMethod.GET)
-	public String getDelete(@RequestParam("pg_bno") int bno,ProgramVO vo) throws Exception{
+	public String getDelete(@RequestParam("pg_bno") int bno, @RequestParam("pg_type") String type) throws Exception{
 		
 		service.programDelete(bno);
 		
-		return "redirect:/sae_program/programlist?pg_type="+vo.getPg_type();
+		return "redirect:/sae_program/programlist?pg_type=" +type;
 		
 	}
 	
@@ -151,10 +200,50 @@ public class ProgramController {
 		rttr.addAttribute("pg_enddate",vo.getPg_enddate());
 		rttr.addAttribute("pg_bstartdate",vo.getPg_bstartdate());
 		rttr.addAttribute("pg_benddate",vo.getPg_benddate());
-		rttr.addAttribute("pg_time",vo.getPg_time());
 		
 		return "redirect:/sae_program/programview?pg_bno=" +vo.getPg_bno();
 //		return "redirect:/sae_program/programread?pg_bno="+vo.getPg_bno();
+	}
+	
+	// 이미지 저장
+	private List<String> fileProcess(MultipartHttpServletRequest multipartRequest) throws Exception {
+
+		// Iterator<String> fileNames = multipartRequest.getFileNames();
+		List<MultipartFile> fileNameList = multipartRequest.getFiles("file");
+		List<String> fileList = new ArrayList<>();
+		for (MultipartFile mf : fileNameList) {
+			String originalFileName = mf.getOriginalFilename();
+			UUID uuid = UUID.randomUUID();
+
+			if (originalFileName.length() > 0) {
+				String imgExtension = originalFileName.substring(originalFileName.lastIndexOf("."),
+						originalFileName.length());
+
+				String saveName = uuid.toString() + imgExtension;
+
+				fileList.add(saveName);
+
+				File file = new File(CURR_IMAGE_REPO_PATH + "\\" + saveName);
+				if (mf.getSize() != 0) {
+					if (!file.exists()) {
+						if (file.getParentFile().mkdir()) {
+							file.createNewFile();
+						}
+					}
+					mf.transferTo(new File(CURR_IMAGE_REPO_PATH + "\\" + saveName));
+				}
+
+			}
+		}
+
+		return fileList;
+
+	}
+	 
+	// 이미지 삭제
+	public void removeImg(String imgPath) {
+		File file = new File(CURR_IMAGE_REPO_PATH + imgPath);
+		file.delete();
 	}
 	
 	//마이페이지 이동(memberController로 이동 예정)

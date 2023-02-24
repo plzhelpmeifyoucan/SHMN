@@ -348,6 +348,6 @@ public class MemberController {
 	@RequestMapping(value = "/mypageCoupon", method = RequestMethod.GET)
 	public String mypageCoupon() throws Exception {
 
-		return "sae_member/mypageCoupon";
+		return "sae_coupon/couponregisterView";
 	}
 }

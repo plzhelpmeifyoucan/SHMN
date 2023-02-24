@@ -31,7 +31,7 @@
 			});
 
 			$("#memberCouponBtn").on("click", function() {
-				location.href = "/sae_member/mypageCoupon";
+				location.href = "/sae_coupon/couponregisterView";
 			});
 		});
 	</script>

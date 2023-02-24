@@ -10,18 +10,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>main</title>
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="resources/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="resources/css/fontAwesome.css">
-<link rel="stylesheet" href="resources/css/light-box.css">
-<link rel="stylesheet" href="resources/css/owl-carousel.css">
-<link rel="stylesheet" href="resources/css/templatemo-style.css">
+<link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="/resources/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="/resources/css/fontAwesome.css">
+<link rel="stylesheet" href="/resources/css/light-box.css">
+<link rel="stylesheet" href="/resources/css/owl-carousel.css">
+<link rel="stylesheet" href="/resources/css/templatemo-style.css">
 
-<link
-	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800"
-	rel="stylesheet">
 <script src="/resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
 </head>
 <!-- 채팅방 css시작 -->
 <style type="text/css">
@@ -262,81 +259,9 @@
 <script
 	src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <body>
-		<!-- test용 로그인/마이페이지버튼 -->
-		<div><a href="/sae_member/login">로그인</a></div>
-		<div><a href="/sae_event/main">이벤트페이지</a></div>
-		<!-- test용 로그인/마이페이지버튼 -->
-		<!-- test용 리뷰게시판 -->
-		<div><a href="/sae_goodsboard/list">리뷰게시판</a></div>
-		<!-- test용 리뷰게시판 -->
-		<!-- test용 리뷰게시판 -->
-		<div><a href="/sae_program/program">프로그램 등록</a></div>
-		<div><a href="/sae_program/programlist?pg_type=1">프로그램1</a></div>
-		<div><a href="/sae_program/programlist?pg_type=2">프로그램2</a></div>
-		<!-- test용 리뷰게시판 -->
-		<div><a href="/sae_ticket/ticketList">입장권</a></div>
-		<div><a href="/sae_faq/faqList">faq</a></div>
-		<div><a href="/sae_product/productmain">상품</a></div>
-		<div><a href="/sae_coupon/couponregisterView">쿠폰</a></div><br>
-		<div><a href="/sae_cart/cartlist">장바구니</a></div>
-		<div><a href="/sae_buy/buylist">구매목록</a></div>
-		
-	<header class="nav-down responsive-nav hidden-lg hidden-md">
-		<button type="button" id="nav-toggle" class="navbar-toggle"
-			data-toggle="collapse" data-target="#main-nav">
-			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
-			<span class="icon-bar"></span> <span class="icon-bar"></span>
-		</button>
-		<!--/.navbar-header-->
+		<%@include file="include/nav.jsp" %>
 
-		<div id="main-nav" class="collapse navbar-collapse">
-			<nav>
-				<ul class="nav navbar-nav">
-					<li><a href="#top">Home</a></li>
-					<li><a href="#featured">Featured</a></li>
-					<li><a href="#projects">Recent Projects</a></li>
-					<li><a href="#video">Presentation</a></li>
-					<li><a href="#blog">Blog Entries</a></li>
-					<li><a href="#contact">Contact Us</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
 
-	<div class="sidebar-navigation hidde-sm hidden-xs">
-		<div class="logo">
-			<a href="#">Saha<em>mano</em></a>
-		</div>
-		<nav>
-			<ul>
-				<li><a href="#top"> <span class="rect"></span> <span
-						class="circle"></span> Home
-				</a></li>
-				<li><a href="#featured"> <span class="rect"></span> <span
-						class="circle"></span> Programs
-				</a></li>
-				<li><a href="#projects"> <span class="rect"></span> <span
-						class="circle"></span> Saeha Shop
-				</a></li>
-				<li><a href="#video"> <span class="rect"></span> <span
-						class="circle"></span> Presentation
-				</a></li>
-				<li><a href="#blog"> <span class="rect"></span> <span
-						class="circle"></span> Board Entires
-				</a></li>
-				<li><a href="#contact"> <span class="rect"></span> <span
-						class="circle"></span> Contact Us
-				</a></li>
-			</ul>
-		</nav>
-		<ul class="social-icons">
-			<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-			<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-			<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-			<li><a href="#"><i class="fa fa-rss"></i></a></li>
-			<li><a href="#"><i class="fa fa-behance"></i></a></li>
-		</ul>
-	</div>
 
 	<div class="slider">
 		<div class="Modern-Slider content-section" id="top">
@@ -347,14 +272,14 @@
 					<div class="info">
 						<div>
 							<h1>
-								Beautiful Template<br>Sentra
+								SAE-HA-MA-NO
 							</h1>
 							<p>
-								Sentra is free Bootstrap CSS Template by templatemo website.<br>
-								Please share our site link to your friends.
+								If you come to Saehamano Palace, the pride of Korea,<br> 
+								you won't regret it. Welcome, Sae-ha-ma-no.
 							</p>
 							<div class="white-button button">
-								<a href="#featured">Discover More</a>
+								<a href="/sae_ticket/ticketList" >입장권 구매</a>
 							</div>
 						</div>
 					</div>
@@ -368,15 +293,15 @@
 					<div class="info">
 						<div>
 							<h1>
-								Please tell <br>your friends
+								SAE-HA-MA-NO
 							</h1>
 							<p>
-								Support templatemo by sharing a link to your friends. <br>Thank
-								you for helping us.
+								Saehamano Palace is located in Gwanghwamun, Seoul.<br>
+								There are Gyeongbokgung Palace and Changgyeonggung Palace in Gwanghwamun.
 							</p>
 
 							<div class="white-button button">
-								<a href="#featured">Share More</a>
+								<a href="/sae_ticket/ticketList" >입장권 구매</a>
 							</div>
 						</div>
 					</div>
@@ -393,12 +318,12 @@
 								Suspendisse suscipit<br>nulla sed
 							</h1>
 							<p>
-								Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-								<br>posuere cubilia Curae; Sed at massa turpis.
+								I ask you. What is Korean? To that question, <br>
+								we answer the Sahamano Palace. Come and experience it yourself.
 							</p>
 
 							<div class="white-button button">
-								<a href="#featured">Learn More</a>
+							<a href="/sae_ticket/ticketList" >입장권 구매</a>
 							</div>
 						</div>
 					</div>
@@ -568,7 +493,7 @@
 		<section id="blog" class="content-section">
 			<div class="section-heading">
 				<h1>
-					Board<br>
+					Notice<br>
 					<em>Entries</em>
 				</h1>
 				<p>
@@ -581,7 +506,7 @@
 					<div class="wrapper">
 						<ul class="tabs clearfix" data-tabgroup="first-tab-group">
 							<li><a href="#tab1" class="active">NOTICE</a></li>
-							<li><a href="#tab2">FAQ</a></li>
+							<li><a href="#tab2"></a></li>
 							<li><a href="#tab3"></a></li>
 							<li><a href="#tab4"></a></li>
 						</ul>
@@ -604,7 +529,30 @@
 									%>
 								</ul>
 							</div>
-							<div id="tab2">
+						</section>
+					</div>
+				</div>
+			</div>
+		</section>
+<section id="blog" class="content-section">
+			<div class="section-heading">
+				<h1>
+					FAQ<br>
+					<em>Entries</em>
+				</h1>
+				<p>
+					Curabitur hendrerit mauris mollis ipsum vulputate rutrum. <br>Phasellus
+					luctus odio eget dui imperdiet.
+				</p>
+			</div>
+			<div class="section-content">
+				<div class="tabs-content">
+					<div class="wrapper">
+						<ul class="tabs clearfix" data-tabgroup="first-tab-group">
+							<li><a href="#tab1" class="active">FAQ</a></li>
+						</ul>
+						<section id="first-tab-group" class="tabgroup">
+							<div id="tab1">
 								<ul>
 									<%
 									for (int i = 0; i < 6; i++) {
@@ -620,117 +568,6 @@
 									<%
 									}
 									%>
-
-								</ul>
-							</div>
-							<div id="tab3">
-								<ul>
-									<li>
-										<div class="item">
-											<img src="resources/img/blog_2.jpg" alt="">
-											<div class="text-content">
-												<h4>Cras commodo odio ut</h4>
-												<span>26 May 2018</span>
-												<p>Nam vel egestas nisi. Nullam lobortis magna at enim
-													venenatis luctus. Nam finibus, mauris eu dictum iaculis,
-													dolor tortor cursus quam, in volutpat augue lectus sed
-													magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-
-												<div class="accent-button button">
-													<a href="#contact">Continue Reading</a>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="item">
-											<img src="resources/img/blog_1.jpg" alt="">
-											<div class="text-content">
-												<h4>Lorem ipsum dolor sit</h4>
-												<span>22 May 2018</span>
-												<p>Nam vel egestas nisi. Nullam lobortis magna at enim
-													venenatis luctus. Nam finibus, mauris eu dictum iaculis,
-													dolor tortor cursus quam, in volutpat augue lectus sed
-													magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-
-												<div class="accent-button button">
-													<a href="#contact">Continue Reading</a>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="item">
-											<img src="resources/img/blog_3.jpg" alt="">
-											<div class="text-content">
-												<h4>Integer ultrices augue</h4>
-												<span>8 May 2018</span>
-												<p>Nam vel egestas nisi. Nullam lobortis magna at enim
-													venenatis luctus. Nam finibus, mauris eu dictum iaculis,
-													dolor tortor cursus quam, in volutpat augue lectus sed
-													magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-
-												<div class="accent-button button">
-													<a href="#contact">Continue Reading</a>
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-							<div id="tab4">
-								<ul>
-									<li>
-										<div class="item">
-											<img src="resources/img/blog_1.jpg" alt="">
-											<div class="text-content">
-												<h4>Lorem ipsum dolor sit</h4>
-												<span>26 April 2018</span>
-												<p>Nam vel egestas nisi. Nullam lobortis magna at enim
-													venenatis luctus. Nam finibus, mauris eu dictum iaculis,
-													dolor tortor cursus quam, in volutpat augue lectus sed
-													magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-
-												<div class="accent-button button">
-													<a href="#contact">Continue Reading</a>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="item">
-											<img src="resources/img/blog_3.jpg" alt="">
-											<div class="text-content">
-												<h4>Integer ultrices augue eu</h4>
-												<span>24 April 2018</span>
-												<p>Nam vel egestas nisi. Nullam lobortis magna at enim
-													venenatis luctus. Nam finibus, mauris eu dictum iaculis,
-													dolor tortor cursus quam, in volutpat augue lectus sed
-													magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-
-												<div class="accent-button button">
-													<a href="#contact">Continue Reading</a>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="item">
-											<img src="resources/img/blog_2.jpg" alt="">
-											<div class="text-content">
-												<h4>Cras commodo odio ut</h4>
-												<span>20 April 2018</span>
-												<p>Nam vel egestas nisi. Nullam lobortis magna at enim
-													venenatis luctus. Nam finibus, mauris eu dictum iaculis,
-													dolor tortor cursus quam, in volutpat augue lectus sed
-													magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-
-												<div class="accent-button button">
-													<a href="#contact">Continue Reading</a>
-												</div>
-											</div>
-										</div>
-									</li>
 								</ul>
 							</div>
 						</section>
@@ -739,6 +576,22 @@
 			</div>
 		</section>
 
+<section id="contact" class="content-section">
+                <div id="map">
+      <jsp:include page="/WEB-INF/views/sae_map/map.jsp"/>
+                </div>
+                <div id="contact-content">
+                    <div class="section-heading">
+                        <h1>Contact<br><em>Saeha</em></h1>
+                        <p>Curabitur hendrerit mauris mollis ipsum vulputate rutrum. 
+                        <br>Phasellus luctus odio eget dui imperdiet.</p>
+                        
+                    </div>
+                    <div class="section-content">
+                        
+                    </div>
+                </div>
+            </section>
 
 		<section id="chat">
 			<div id="chat-circle" class="btn btn-raised">
@@ -839,7 +692,7 @@
 					str += "          <span class=\"msg-avatar\">";
 					str += "            <img src=\"resources\/img\/chat1.jpg\">";
 					str += "          <\/span>";
-					str += "          <div class=\"cm-msg-text\">";
+					str += "          <div class=\"cm-msg-text\">"; 
 					str += msg;
 					str += "          <\/div>";
 					str += "        <\/div>";
@@ -914,12 +767,6 @@
 			</script>
 			<!-- 채팅 방 -->
 		</section>
-
-
-
-		<section class="footer">
-			<p>Copyright &copy; 2019 Company Name . Design: TemplateMo</p>
-		</section>
 	</div>
 
 	<script
@@ -974,6 +821,8 @@
 			lastScrollTop = st;
 		}
 	</script>
-
+<footer class="footer">
+			<p>Copyright &copy; 2019 Company Name . Design: TemplateMo</p>
+		</footer>
 </body>
 </html>

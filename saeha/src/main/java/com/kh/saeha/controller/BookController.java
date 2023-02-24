@@ -126,12 +126,12 @@ public class BookController {
 	   
 	   //예약확인 페이지
 	   @RequestMapping(value = "/bookread", method = RequestMethod.GET)
-	   public String postbookRead(BookVO vo, ProgramVO pvo,  @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception {
+	   public String postbookRead(BookVO vo,  @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception {
 		   
 		   logger.info("bookread");
 		   
 		   model.addAttribute("bookread",service.bookread(vo.getBk_bno()));
-		   model.addAttribute("programread",pservice.programread(pvo.getPg_bno()));
+		   model.addAttribute("programread",pservice.programread(vo.getBk_pno()));
 		   model.addAttribute("scri",scri);
 		   
 		   return "sae_book/bookview";
@@ -141,7 +141,7 @@ public class BookController {
 		@RequestMapping(value="/bookDelete", method = RequestMethod.GET)
 		public String getDelete(@RequestParam("bk_bno") int bno,BookVO vo) throws Exception{
 			
-			service.bookDelete(vo);
+			service.bookDelete(bno);
 			
 			return "redirect:/sae_book/booklist";
 			
@@ -149,15 +149,16 @@ public class BookController {
 		
 		//예매 변경 페이지로 이동
 		@RequestMapping(value="/bookupdateview")
-		public String getUpdate(HttpServletRequest req, Model model, BookVO vo ) throws Exception{
+		public String getUpdate(HttpServletRequest req, Model model, BookVO vo,ProgramVO pvo ) throws Exception{
 			
 			HttpSession session = req.getSession();
 		    MemberVO id = (MemberVO)session.getAttribute("member");
 			
 			logger.info("bookupdateview");
 			
+			model.addAttribute("programread",pservice.programread(pvo.getPg_bno()));
 			model.addAttribute("bookread", service.bookread(vo.getBk_bno()));
-			model.addAttribute("bookinfo", service.bookinfo(vo.getPg_bno()));
+//			model.addAttribute("bookinfo", service.bookinfo(vo.getPg_bno()));
 			
 			return "sae_book/bookupdate";
 		}

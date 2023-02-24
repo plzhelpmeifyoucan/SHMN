@@ -115,6 +115,10 @@ $(document).ready(function(){
 <label for="bk_pdate" class="col-sm-2 control-laber">관람 날짜</label>
 <input type="text" id="bk_pdate" name="bk_pdate" class="form-control" value="${bookread.bk_pdate}" readonly="readonly" />
 </div>
+ <div class="form-group">
+<label for="bk_pdate" class="col-sm-2 control-laber">관람 시간</label>
+<input type="text" id="bk_time" name="bk_time" class="form-control" value="${bookread.bk_time}" readonly="readonly" />
+</div>
 <!-- <button class="write_btn" type="submit">작성</button> -->
 <c:if test = "${member.userId != null }">
 <button type="button" class="update_btn btn btn-warning">예매변경</button>

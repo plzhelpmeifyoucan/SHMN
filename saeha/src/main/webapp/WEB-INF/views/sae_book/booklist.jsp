@@ -31,6 +31,7 @@
 <input type="hidden" id="bk_bno" name="bk_bno" value="${bookread.bk_bno}" />
 <input type="hidden" id="bk_pno" name="bk_pno" value="${bookread.bk_pno}" />
 <input type="hidden" id="bk_id" name="bk_id" value="${bookread.bk_id}" />
+<input type="hidden" id="bk_time" name="bk_time" value="${bookread.bk_time}" />
 <input type="hidden" id="pg_bno" name="pg_bno" value="${programread.pg_bno}" />
 <input type="hidden" id="pg_name" name="pg_name" value="${programread.pg_name}" />
 <input type="hidden" id="pg_content" name="pg_content" value="${programread.pg_content}" />
@@ -43,11 +44,12 @@
 <tr>
 <td><c:out value="${booklist1.bk_bno}" /></td>
 <td>
-<a href="/sae_book/bookread?bk_bno=${booklist1.bk_bno}"><c:out value="${booklist1.pg_name}" /></a>
+<a href="/sae_book/bookread?bk_bno=${booklist1.bk_bno}&bk_pno=${booklist1.bk_pno}"><c:out value="${booklist1.pg_name}" /></a>
 </td>
 <td><c:out value="${booklist1.bk_name}" /></td>
 <td><c:out value="${booklist1.bk_inwon}" /></td>
 <td><c:out value="${booklist1.bk_pdate}" /></td>
+<td><c:out value="${booklist1.bk_time}" /></td>
 <%-- <td><fmt:formatDate value="${programlist.regdate}" pattern="yyyy-MM-dd" /></td> --%>
 </tr>
 </c:forEach>
@@ -57,11 +59,12 @@
 <tr>
 <td><c:out value="${booklist2.bk_bno}" /></td>
 <td>
-<a href="/sae_book/bookread?bk_bno=${booklist2.bk_bno}"><c:out value="${booklist2.pg_name}" /></a>
+<a href="/sae_book/bookread?bk_bno=${booklist2.bk_bno}&bk_pno=${booklist2.bk_pno}"><c:out value="${booklist2.pg_name}" /></a>
 </td>
 <td><c:out value="${booklist2.bk_name}" /></td>
 <td><c:out value="${booklist2.bk_inwon}" /></td>
 <td><c:out value="${booklist2.bk_pdate}" /></td>
+<td><c:out value="${booklist2.bk_time}" /></td>
 <%-- <td><fmt:formatDate value="${programlist.regdate}" pattern="yyyy-MM-dd" /></td> --%>
 </tr>
 </c:forEach>
@@ -71,28 +74,18 @@
 <tr>
 <td><c:out value="${booklist3.bk_bno}" /></td>
 <td>
-<a href="/sae_book/bookread?bk_bno=${booklist3.bk_bno}"><c:out value="${booklist3.pg_name}" /></a>
+<a href="/sae_book/bookread?bk_bno=${booklist3.bk_bno}&bk_pno=${booklist3.bk_pno}"><c:out value="${booklist3.pg_name}" /></a>
 </td>
 <td><c:out value="${booklist3.bk_name}" /></td>
 <td><c:out value="${booklist3.bk_inwon}" /></td>
 <td><c:out value="${booklist3.bk_pdate}" /></td>
+<td><c:out value="${booklist3.bk_time}" /></td>
 <%-- <td><fmt:formatDate value="${programlist.regdate}" pattern="yyyy-MM-dd" /></td> --%>
 </tr>
 </c:forEach>
 <tr><td>.</td></tr>
 <tr><td>.</td></tr>
-<c:forEach items="${booklist4}" var = "booklist4">
-<tr>
-<td><c:out value="${booklist4.bk_bno}" /></td>
-<td>
-<a href="/sae_book/bookread?bk_bno=${booklist4.bk_bno}"><c:out value="${booklist4.pg_name}" /></a>
-</td>
-<td><c:out value="${booklist4.bk_name}" /></td>
-<td><c:out value="${booklist4.bk_inwon}" /></td>
-<td><c:out value="${booklist4.bk_pdate}" /></td>
-<%-- <td><fmt:formatDate value="${programlist.regdate}" pattern="yyyy-MM-dd" /></td> --%>
-</tr>
-</c:forEach>
+
 </table>
 
 <div class="search row">

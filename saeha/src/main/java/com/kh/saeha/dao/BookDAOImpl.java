@@ -23,8 +23,8 @@ public class BookDAOImpl implements BookDAO {
 	}
 
 	@Override
-	public void bookDelete(BookVO vo) throws Exception {
-		sql.delete("bookMapper.bookDelete",vo);
+	public void bookDelete(int bno) throws Exception {
+		sql.delete("bookMapper.bookDelete",bno);
 	}
 
 	@Override
