@@ -45,8 +45,12 @@ $(document).ready(function() {
 
 </script>
 <body>
+<img alt="" src="/resources/img/bnr2.jpg">
+<div>
 <%@include file="../include/nav.jsp" %>
+</div>
 <div class="page-content">
+<div style="width:90%;">
 <div class="section-heading">
    <h1>상세보기</h1>
 </div>
@@ -89,6 +93,7 @@ $(document).ready(function() {
 
 	
     </form>
+   </div>
    </div>
    </div>
    <footer class="footer">

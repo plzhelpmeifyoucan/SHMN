@@ -33,7 +33,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="/">Home</a></li>
 					<!-- <li><a href="/sae_program/programlist?pg_type=1">Programs</a></li> -->
-					<li><a href="/sae_program/program">Programs</a></li>
+					<li><a href="/sae_program/programlist?pg_type=1">Programs</a></li>
 					<li><a href="/sae_product/goodslist">Saeha Shop</a></li>
 					<li><a href="/sae_boardn/nlist">Notice</a></li>
 					<li><a href="/sae_faq/faqList">FAQ</a></li>
@@ -52,7 +52,7 @@
 				<li><a href="/"> <span class="rect"></span> <span
 						class="circle"></span> Home
 				</a></li>
-				<li><a href="/sae_program/program"> <span class="rect"></span> <span
+				<li><a href="/sae_program/programlist?pg_type=1"> <span class="rect"></span> <span
 						class="circle"></span> Programs
 				</a></li>
 				<li><a href="/sae_product/goodslist"> <span class="rect"></span> <span

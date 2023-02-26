@@ -16,6 +16,7 @@
 <body>
 <%@include file='../include/nav.jsp' %>
 <div class="page-content">
+<div style="width:90%">
 <div style="padding:60px 0; height: 100%;">
 <div class="section-heading">
 				<h1>
@@ -33,7 +34,7 @@
                     <form method="GET" class="form-inline tm-mb-80 tm-search-form">                
                         <input class="form-control tm-search-input"  name="keyword" id="keywordInput" 
 							   value="${srci.keyword}"  type="text" placeholder="Search..." aria-label="Search">
-                        <button class="tm-search-button" type="submit">
+                        <button class="tm-search-button" id="searchBtn" type="button">
                             검색
                         </button>                                
                     </form>
@@ -114,7 +115,7 @@
 
 </div>
 </div>
-
+</div>
 <footer class="footer">
 			<p>Copyright &copy; 2019 Company Name . Design: TemplateMo</p>
 		</footer>

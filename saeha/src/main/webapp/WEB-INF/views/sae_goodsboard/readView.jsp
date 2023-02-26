@@ -107,13 +107,18 @@ $(document).ready(function(){
 
 </script>
 <body>
-
-<div class="container">
-<header>
-<h1> 게시판 </h1>
-</header>
-<hr />
-
+<img alt="" src="/resources/img/bnr2.jpg">
+<div>
+<%@include file="../include/nav.jsp" %>
+</div>
+	<div class="page-content">
+<div style="width: 90%;">
+<div style="padding:60px 0; height: 100%;">
+<div class="section-heading">
+				<h1>
+					Review
+				</h1>
+				</div>
 
 <!-- 
   role="form" : html5에 새롭게 추가된 태그로서 해당 태그에 대한 정의를 해 줌으로서
@@ -131,24 +136,30 @@ $(document).ready(function(){
 <input type="hidden" id="keyword" name="keyword" value="${scri.keyword}" />
 </form>
 
-<div class="form-group">
-<label for="title" class="col-sm-2 control-laber">제목</label>
-<input type="text" id="title" name="gwTitle" class="form-control" value="${read.gwTitle}" readonly="readonly" />
+<hr style="2px solid #333;"><br><br>
+
+<div style="height: 50px;">
+<h4><input type="text" id="title" name="gwTitle" class="form-control" value="${read.gwTitle}" readonly="readonly" />
+</h4>
 </div>
-<div class="form-group">
-<label for="content" class="col-sm-2 control-laber">내용</label>
-<textarea id="content" name="gwContent" class="form-control" readonly="readonly"><c:out value="${read.gwContent}"/></textarea>
-</div>
-<div class="form-group">
-<label for="score" class="col-sm-2 control-laber">점수</label>
-<c:forEach var="score" begin="1" end="${read.gwScore}">★
-</c:forEach><!-- 소희씨한테 별 위치 잡아달라고 하기 -->
-</div>
-<div class="form-group">
-<label for="writer" class="col-sm-2 control-laber">작성자</label>
-<input type="text" id="writer" name="gwWriter" class="form-control" value="${read.gwWriter}" readonly="readonly" />
+<div style="border-bottom: 1px solid black;border-top: 1px solid black; display:flex; justify-content:space-between; height: 30px;">
+<span>
+별&nbsp;<c:forEach var="score" begin="1" end="${read.gwScore}">★
+</c:forEach>
+</span>
+<span>
+<input type="text" id="writer" name="gwWriter" class="form-control" value="${read.gwWriter}" readonly="readonly" />&nbsp; 님
+</span>
 </div>
 
+<div style="border-bottom: 1px solid black;border-top: 1px solid black; height: 30px; text-align: right;">
+<c:out value="${read.gwDate}" />
+</div>
+<div style="text-align: left;">
+<textarea id="content" name="gwContent" class="form-control" readonly="readonly"><c:out value="${read.gwContent}"/></textarea>
+
+<br>
+<br>
 <div style="display:flex; overflow: scroll">
 <c:forEach items="${imglist }" var="imglist">
 			<div class="form-grop">
@@ -159,15 +170,13 @@ $(document).ready(function(){
 			<br>
 </c:forEach>
 </div>
-<div class="form-group">
-<label for="regdate" class="col-sm-2 control-laber">작성 날짜</label>
-<c:out value="${read.gwDate}" />
+
 </div>
 
 <div>
 <c:if test="${member.userId eq read.gwWriter || member.userId eq 'admin' }">
 <!-- <button type="button" class="update_btn btn btn-warning">수정</button> -->
-<button type="button" class="delete_btn btn btn-danger">삭제</button>
+<button type="button" class="delete_btn btn btn-danger">삭제</button> &nbsp;&nbsp;
 </c:if>
 <button type="button" class="list_btn btn btn-primary">목록</button>
 </div>
@@ -224,7 +233,7 @@ $(document).ready(function(){
 </div>
 </form>
 </section>
-<hr />
+
 </div>
 
 
@@ -245,5 +254,12 @@ $(document).ready(function(){
 <input type="hidden" name="keyword" value="${scri.keyword}" />
 
 </form>
+
+</div>
+</div>
+
+<footer class="footer">
+			<p>Copyright &copy; 2019 Company Name . Design: TemplateMo</p>
+		</footer>
 </body>
 </html>

@@ -10,12 +10,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>main</title>
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="stylesheet" href="/resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="/resources/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="/resources/css/fontAwesome.css">
-<link rel="stylesheet" href="/resources/css/light-box.css">
-<link rel="stylesheet" href="/resources/css/owl-carousel.css">
-<link rel="stylesheet" href="/resources/css/templatemo-style.css">
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="resources/css/fontAwesome.css">
+<link rel="stylesheet" href="resources/css/light-box.css">
+<link rel="stylesheet" href="resources/css/owl-carousel.css">
+<link rel="stylesheet" href="resources/css/templatemo-style.css">
 
 <script src="/resources/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 

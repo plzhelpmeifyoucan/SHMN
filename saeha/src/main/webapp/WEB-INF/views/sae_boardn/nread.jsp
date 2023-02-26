@@ -35,9 +35,12 @@ $(document).ready(function() {
 	})
 </script>
 <body>
+<img alt="" src="/resources/img/bnr2.jpg">
+<div>
 <%@include file="../include/nav.jsp" %>
+</div>
 	<div class="page-content">
-
+<div style="width: 90%;">
 <section id="blog" class="content-section">		
 		<div class="section-content">
 				<div class="tabs-content">
@@ -75,7 +78,7 @@ ${nread.n_content}
 </div>
 </section>
 </div>
-
+</div>
 <footer class="footer">
 			<p>Copyright &copy; 2019 Company Name . Design: TemplateMo</p>
 		</footer>

@@ -17,15 +17,18 @@
 </head>
 
 <body>
-<div class="container">
-<header>
-<h1>예약목록</h1>
-</header>
-<hr />
+<img alt="" src="/resources/img/bnr2.jpg">
+<div>
+<%@include file="../include/nav.jsp" %>
+</div>
+<div class="page-content">
+<div style="width:90%;">
+<div class="section-heading">
+   <h1>예약목록</h1>
+</div>
+    
+<div style="padding:60px 0; height: 100%;">
 
-<%-- <div>
-<%@include file="nav.jsp" %>
-</div> --%>
 <section id="container">
 <form role="form" method="get">
 <input type="hidden" id="bk_bno" name="bk_bno" value="${bookread.bk_bno}" />
@@ -35,9 +38,11 @@
 <input type="hidden" id="pg_bno" name="pg_bno" value="${programread.pg_bno}" />
 <input type="hidden" id="pg_name" name="pg_name" value="${programread.pg_name}" />
 <input type="hidden" id="pg_content" name="pg_content" value="${programread.pg_content}" />
+
+<h4>관람 예약목록</h4>
 <table class="table table-hover">
 <thead>
-<tr><th>예약번호</th><th>프로그램</th><th>예약자</th><th>예약인원</th><th>예약일</th></tr>
+<tr><th>예약번호</th><th>프로그램</th><th>예약자</th><th>예약인원</th><th>예약일</th><th>예약시간</th></tr>
 </thead>
 
 <c:forEach items="${booklist1}" var = "booklist1">
@@ -53,8 +58,13 @@
 <%-- <td><fmt:formatDate value="${programlist.regdate}" pattern="yyyy-MM-dd" /></td> --%>
 </tr>
 </c:forEach>
-<tr><td>.</td></tr>
-<tr><td>.</td></tr>
+</table>
+
+<h4>체험 예약목록</h4>
+<table class="table table-hover">
+<thead>
+<tr><th>예약번호</th><th>프로그램</th><th>예약자</th><th>예약인원</th><th>예약일</th><th>예약시간</th></tr>
+</thead>
 <c:forEach items="${booklist2}" var = "booklist2">
 <tr>
 <td><c:out value="${booklist2.bk_bno}" /></td>
@@ -68,8 +78,13 @@
 <%-- <td><fmt:formatDate value="${programlist.regdate}" pattern="yyyy-MM-dd" /></td> --%>
 </tr>
 </c:forEach>
-<tr><td>.</td></tr>
-<tr><td>.</td></tr>
+</table>
+
+<h4>전시 예약목록</h4>
+<table class="table table-hover">
+<thead>
+<tr><th>예약번호</th><th>프로그램</th><th>예약자</th><th>예약인원</th><th>예약일</th><th>예약시간</th></tr>
+</thead>
 <c:forEach items="${booklist3}" var = "booklist3">
 <tr>
 <td><c:out value="${booklist3.bk_bno}" /></td>
@@ -83,12 +98,9 @@
 <%-- <td><fmt:formatDate value="${programlist.regdate}" pattern="yyyy-MM-dd" /></td> --%>
 </tr>
 </c:forEach>
-<tr><td>.</td></tr>
-<tr><td>.</td></tr>
-
 </table>
 
-<div class="search row">
+<%-- <div class="search row">
 <div class="col-xs-2 col-sm-2">
 <select id="typechange" name="searchType" class="form-control">
 <option value="0">=========</option>
@@ -121,7 +133,7 @@ $(function(){
 /* $('#typechange').change(function () {
 		location.href = '/sae_book/booklist?bk_type=' + this.value;
 }); */
-</script>
+</script> --%>
 </div>
 
 <div class="col-md-offset-3">
@@ -143,7 +155,11 @@ $(function(){
 </ul>
 </div>
 </form>
-</section>
+
 </div>
+   </div>
+   <footer class="footer">
+			<p>Copyright &copy; 2019 Company Name . Design: TemplateMo</p>
+		</footer>
 </body>
 </html>

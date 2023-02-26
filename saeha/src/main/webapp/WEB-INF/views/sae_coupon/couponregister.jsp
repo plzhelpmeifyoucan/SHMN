@@ -73,12 +73,21 @@ $(document).ready(function() {
 <meta charset="UTF-8">
 <title>쿠폰등록</title>
 </head>
-<body>
-	
-	<div>
-		<button><a href="/">메인페이지로</a></button>
-	</div>
-	
+<body><img alt="" src="/resources/img/bnr2.jpg">
+<div>
+<%@include file="../include/nav.jsp" %>
+</div>
+<div class="page-content">
+<div style="width:90%">
+<div style="padding:60px 0; height: 100%;">
+<div class="container">
+<div class="section-heading">
+				<h1>
+구매내역</h1>
+
+<hr />
+</div>
+
 	<form name="1000">
 		<input type="hidden" id="coupon_id" name="coupon_id" value="${member.userId}"/>
 		<input type="hidden" id="coupon_name" name="coupon_name" value="1000원 할인 쿠폰"/>
@@ -117,7 +126,7 @@ $(document).ready(function() {
 		</tr>
 	</c:forEach>
 	</table>
-	
+	<br><br>
 	<div>
 		<label>쿠폰번호</label>
 		<input type="text" id="coupon">
@@ -127,5 +136,9 @@ $(document).ready(function() {
 		
 	</div>
 	</div>
+		</div></div></div></div>
+	<footer class="footer">
+			<p>Copyright &copy; 2019 Company Name . Design: TemplateMo</p>
+		</footer>
 </body>
 </html>

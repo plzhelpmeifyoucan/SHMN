@@ -18,9 +18,13 @@
 
 </head>
 <body>
+<img alt="" src="/resources/img/bnr2.jpg">
+<div>
 <%@include file="../include/nav.jsp" %>
+</div>
 
 		<div class="page-content" style="display: flex; justify-content: center;">
+		<div style="width: 90%;">
 		<div style="padding:60px 0; height: 100%;width: 90%;">
 <section id="blog" class="content-section">		
 		<div class="section-content">
@@ -61,6 +65,7 @@
 					<a href="/sae_boardn/nwriteView">글 등록</a>
 				</button>
 			</c:if>
+</div>
 </div>
 </div>
 <footer class="footer">

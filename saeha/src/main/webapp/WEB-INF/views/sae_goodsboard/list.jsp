@@ -26,12 +26,12 @@
 				</h1>
 	</div>
 <DIV style="display: flex; height: 150px; padding: 15px; border: 1px solid gray;">
-        <div style="width: 40%; text-align: center; border-right: 1px solid gray; justify-content: center; display: grid;">
+        <div style=" text-align: center; border-right: 1px solid gray; justify-content: center; display: grid;">
             <div style="height: 70%;font-size: 60px;text-align: center;align-items: baseline;display: flex;">
             <img  src="/resources/img/star.PNG" style="width: 57px;">${devideCount }</div> 
             <div> ${pageMaker.totalCount}개 리뷰</div>
         </div>
-        <div></div>
+
     </DIV>
     <br>
 <div style="display: flex;justify-content: space-between;">

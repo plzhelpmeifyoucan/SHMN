@@ -179,6 +179,7 @@ var form;
 <body>
 <%@include file="../include/nav.jsp" %>
 <div class="page-content">
+<div style="width: 90%;">
 <div style="padding:60px 0;height: 100%;width: 90%;">
 <div class="section-heading">
 				<h1>Saehamano<br><em>MyCart</em></h1>
@@ -279,6 +280,7 @@ var form;
 	<%
 		}
 	%>
+	</div>
 		<footer class="footer">
 			<p>Copyright &copy; 2019 Company Name . Design: TemplateMo</p>
 		</footer>

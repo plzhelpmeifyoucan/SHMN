@@ -167,6 +167,19 @@
 </script>
 
 <body>
+<%@include file="../include/nav.jsp" %>
+<div class="page-content">
+<div style="width:90%;">
+<div style="padding:60px 0; height: 100%;">
+	<div class="section-heading">
+				<h1>
+					Saeha
+					<em>Shop</em>
+				</h1>
+
+	</div>
+	
+	
 	<section id="container">
 
 
@@ -313,5 +326,12 @@
 			value="${scri.searchType }" /> <input type="hidden" id="keyword"
 			name="keyword" value="${scri.keyword }" />
 	</form>
+	
+	</div>
+	</div>
+</div>
+<footer class="footer">
+<p>Copyright &copy; 2019 Company Name . Design: TemplateMo</p>
+</footer>
 </body>
 </html>

@@ -21,8 +21,12 @@ $(document).ready(function(){
 	});
 </script>
 <body>
+<img alt="" src="/resources/img/bnr2.jpg">
+<div>
 <%@include file="../include/nav.jsp" %>
+</div>
 <div class="page-content">
+<div style="width: 90%;">
 <div style="padding:60px 0; height: 100%;">
 	<div class="section-heading">
 				<h1>
@@ -61,6 +65,7 @@ $(document).ready(function(){
 		</tr>
 </table>
 </form>
+</div>
 </div>
 </div>
 <footer class="footer">

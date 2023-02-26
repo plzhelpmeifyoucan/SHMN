@@ -136,6 +136,7 @@ body {
 
 <%@include file='../include/nav.jsp' %>
 <div class="page-content">
+<div style="width:90%">
 <div style="padding:60px 0; height: 100%;">
 
 			<div class="section-heading">
@@ -181,14 +182,17 @@ body {
 								style="width: 190px; height: 50px;">비밀번호 찾기</button>
 						</div>
 
-						<div>
+						<div style="display: flex;justify-content: space-between;margin-top: 5px;">
 							<!-- kakao 로그인 버튼 -->
-							<a id="kakao-login-btn"><img
-								src="<spring:url value='/resources/img/kakao.login.samll.png'/>"></a>
+							<a id="kakao-login-btn">
+							<img src="<spring:url value='/resources/img/kakao.login.samll.png'/>"></a>
 							<!-- kakao 로그인 버튼 -->
 							<!-- 네이버 로그인 버튼 노출 영역 -->
-							<div id="naver_id_login"></div>
+							<div style="height: -webkit-fill-available;
+    width: 100%;
+    border: 1px solid gray;" id="naver_id_login"></div>
 							<!-- //네이버 로그인 버튼 노출 영역 -->
+							</div>
 					</c:if>
 					<c:if test="${member != null }">
 						<div>
@@ -221,6 +225,7 @@ body {
 		naver_id_login.setState(state);
 		naver_id_login.init_naver_id_login();
 	</script>
+	</div>
 	</div>
 	<footer class="footer">
 			<p>Copyright &copy; 2019 Company Name . Design: TemplateMo</p>

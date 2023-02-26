@@ -19,6 +19,7 @@
 <body>
 <%@include file="../include/nav.jsp" %>
 <div class="page-content">
+<div style="width:90%">
 <div style="padding:60px 0; height: 100%;">
 	<div class="section-heading">
 				<h1>
@@ -31,7 +32,7 @@
 				</p>
 	</div>
 
-<div class="search row" style="width:90%;">
+<%-- <div class="search row" style="width:90%;">
 <div class="col-xs-2 col-sm-2">
 <select name="searchType" class="form-control">
 <option value="n"<c:out value="${scri.searchType == null ? 'selected' : ''}" />>--------</option>
@@ -50,18 +51,25 @@
 </div>
 </div>
 
-<script>
+ <script>
 $(function(){
    $('#searchBtn').click(function(){
       self.location = "list" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() +
                   "&keyword=" + encodeURIComponent($('#keywordInput').val());
    });
 });
-</script>
-</div>
+</script> 
+</div> --%>
 
 <div style="width:90%; margin: 20px 0;">
 <form role="form" method="get">
+
+  <label for="pg_type">프로그램 분류</label>
+  <select  id="pg_type" name="pg_type" class="chk" onchange="location.href=this.value">
+    <option value="/sae_program/programlist?pg_type=1">관람</option>
+    <option value="/sae_program/programlist?pg_type=2">체험</option>
+    <option value="/sae_program/programlist?pg_type=3">전시</option>
+  </select>
 
 <c:forEach items="${programlist}" var = "programlist">
 <div style="padding: 25px;display: flex;border-top: 0.5px solid gray;">
@@ -106,6 +114,7 @@ $(function(){
 
 </div>
 </form>
+</div>
 </div>
 </div>
 </div>

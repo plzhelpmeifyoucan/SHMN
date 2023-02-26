@@ -128,6 +128,7 @@ $(document).ready(function() {
 <%@include file="../include/nav.jsp" %>
 </div>
 <div class="page-content">
+<div style="width:90%">
 <div style="padding:60px 0; height: 100%;">
 	<div class="section-heading">
 				<h1>
@@ -167,7 +168,7 @@ $(document).ready(function() {
       			<a href="/sae_faq/faqWriteView"><button>관리자 글 등록</button></a>
    			</c:if>
 	</div>			
-
+</div>
 </div>
 	</div>
 		<footer class="footer">

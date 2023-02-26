@@ -52,8 +52,12 @@ $(document).ready (function () {
 </script>
 
 <body>
+<img alt="" src="/resources/img/bnr2.jpg">
+<div>
 <%@include file="../include/nav.jsp" %>
+</div>
 <div class="page-content">
+<div style="width:90%">
 <div style="padding:60px 0; height: 100%;">
 	<div class="section-heading">
 				<h1>
@@ -74,10 +78,9 @@ $(document).ready (function () {
 			&nbsp;&nbsp;
   <label for="pg_type">프로그램 분류</label></td><td>
   <select  id="pg_type" name="pg_type" class="chk">
-    <option value="1">관람</option>
-    <option value="2">체험</option>
-    <option value="3">단체</option>
-    <option value="4">4</option>
+    <option value="관람">관람</option>
+    <option value="체험">체험</option>
+    <option value="전시">전시</option>
   </select>
   </td>
   </tr>
@@ -153,6 +156,7 @@ $(document).ready (function () {
 
 </table>
 </form>
+</div>
 </div>
 </div>
 </div>

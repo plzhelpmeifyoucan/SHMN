@@ -149,6 +149,7 @@ input{border: none;}
 <body>
 <%@include file="../include/nav.jsp" %>
 <div class="page-content">
+<div style="width: 90%;">
 <div style="padding:60px 0;height: 100%;width: 90%;">
 <div class="section-heading">
 				<h1>Purchasing<br><em>Products</em></h1>
@@ -226,6 +227,7 @@ input{border: none;}
 	&nbsp;
 	<button class="buybtn" style="background-color: white;font-size:17px; height:45px;border-radius:10px; color: black;">카카오페이로 결제하기</button>
 </div>	
+	</div>
 	</div>
 	</div>
 	<footer class="footer">

@@ -56,54 +56,64 @@
 	}
 </script>
 <body>
-<div id = "root">
-	<header>
-		<h1>상품 등록</h1>
-	</header>
-		<hr />
-	<hr />
-	
-	<section id = "container">
+<img alt="" src="/resources/img/bnr2.jpg">
+<div>
+<%@include file="../include/nav.jsp" %>
+</div>
+<div class="page-content">
+<div style="width:90%">
+<div style="padding:60px 0; height: 100%;">
+	<div class="section-heading">
+				<h1>
+				&nbsp;상품 등록
+				</h1>
+	</div>
+
+	<div id="root">
 	<form action="/sae_product/productwrite" enctype="multipart/form-data" name = "writeForm" method="post">
-	<table>
-	<tbody>
+<table style="width: 65%;">
 		<c:if test="${member.userId == 'admin' }">
 		<input type="hidden" id="pd_readcount" name="pd_readcount" value="0" />
 		<input type="hidden" id="pd_buycount" name="pd_buycount" value="0" />
-		<tr><td>
-			<label for= "pd_type">상품 종류</label>	
+		<tr style="border-bottom: 1px solid #ccc; height: 70px;"><td style="width: 30%;">
+			<label for= "pd_type">상품 종류</label>	</td><td>
 			<input type="radio" name="pd_type" value="g" checked="checked">굿즈
 			<input type="radio" name="pd_type" value="h">한복
 			</td>
 		</tr>
-		<tr><td>
-			<label for= "pd_name">상품 이름</label><input type="text" id="pd_name" name="pd_name" class="chk" title="굿즈 이름을 입력하세요" />
+	<tr style="border-bottom: 1px solid #ccc; height: 70px;"><td style="width: 30%;">
+			<label for= "pd_name">상품 이름</label>
+			</td><td>
+			<input type="text" id="pd_name" name="pd_name" class="chk" title="굿즈 이름을 입력하세요" />
+			</td>
+
+		</tr>
+		<tr style="border-bottom: 1px solid #ccc; height: 70px;"><td style="width: 30%;">
+			<label for = "pd_content">상세 설명</label>
+			</td><td>
+			<textarea id="pd_content" name = "pd_content" class="chk" title="상세셜명을 입력하세요." ></textarea>
 			</td>
 		</tr>
-		<tr>
-			<td>
-			<label for = "pd_content">상세 설명</label><textarea id="pd_content" name = "pd_content" class="chk" title="상세셜명을 입력하세요." ></textarea>
+		<tr style="border-bottom: 1px solid #ccc; height: 70px;"><td style="width: 30%;">
+			<label for = "pd_stock">재고수량</label>
+			</td><td>
+			<input type="number" id="pd_stock" name = "pd_stock" class="chk" title="재고수량을 입력하세요." value="1" />
 			</td>
 		</tr>
-		<tr>
-			<td>
-			<label for = "pd_stock">재고수량</label><input type="number" id="pd_stock" name = "pd_stock" class="chk" title="재고수량을 입력하세요." value="1" />
+		<tr style="border-bottom: 1px solid #ccc; height: 70px;"><td style="width: 30%;">
+			<label for= "pd_price">가격</label>
+			</td><td>
+			<input type="number" id="pd_price" name="pd_price" class="chk" title="가격을 입력하세요." />
 			</td>
 		</tr>
-		<tr>
-			<td>
-			<label for= "pd_price">가격</label><input type="number" id="pd_price" name="pd_price" class="chk" title="가격을 입력하세요." />
+		<tr style="border-bottom: 1px solid #ccc; height: 70px;"><td style="width: 30%;">
+			<label for= "uploadFile">사진</label>
+			</td><td>
+			<input multiple="multiple" type="file" id="file" name="file" class="chk" title="상품 사진을 입력하세요" />
 			</td>
 		</tr>
-		<tr><td>
-			<label for= "uploadFile">사진</label><input multiple="multiple" type="file" id="file" name="file" class="chk" title="상품 사진을 입력하세요" />
-			</td>
-		</tr>
-		<tr>	
-			<td>
-			<button class="write_btn" type="submit">등록</button>
-			</td>
-			<td>
+		<tr style="border-bottom: 1px solid #ccc; height: 70px;"><td style="width: 30%;float: right;" colspan="2">	
+			<button class="write_btn" type="submit">등록</button>&nbsp;&nbsp;
 			<button type="button"><a href="/sae_product/productmain">뒤로</a></button>
 			</td>
 		</tr>
@@ -114,7 +124,12 @@
 	</tbody>
 	</table>
 	</form>
-	</section>
+
 	</div>
+	</div>
+</div></div>
+<footer class="footer">
+			<p>Copyright &copy; 2019 Company Name . Design: TemplateMo</p>
+		</footer>
 </body>
 </html>

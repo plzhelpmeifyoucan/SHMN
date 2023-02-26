@@ -19,7 +19,10 @@
 </head>
 
 <body>
-
+<%@include file="../include/nav.jsp" %>
+<div class="page-content">
+<div style="width:90%">
+<div style="padding:60px 0; height: 100%;">
 	<div class="container">
 		<header>
 			<h1>응모한 사진 상세보기</h1>
@@ -54,5 +57,9 @@
 				</c:if>
 				<a href="/sae_event/main">목록</a>
 			</div>
+			</div></div></div></div>
+<footer class="footer">
+			<p>Copyright &copy; 2019 Company Name . Design: TemplateMo</p>
+		</footer>
 </body>
 </html>
